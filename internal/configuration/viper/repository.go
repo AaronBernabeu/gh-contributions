@@ -3,7 +3,7 @@ package configuration
 import (
 	"os"
 
-	configuration "github.com/Aaronidas/gh-contributions/internal/configuration"
+	configuration "github.com/AaronBernabeu/gh-contributions/internal/configuration"
 	viper "github.com/spf13/viper"
 )
 

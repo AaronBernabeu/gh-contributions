@@ -1,4 +1,4 @@
-module github.com/Aaronidas/gh-contributions
+module github.com/AaronBernabeu/gh-contributions
 
 go 1.21
 

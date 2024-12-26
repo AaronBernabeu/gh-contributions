@@ -1,9 +1,9 @@
 package main
 
 import (
-	viperConfigurationRepository "github.com/Aaronidas/gh-contributions/internal/configuration/viper"
-	"github.com/Aaronidas/gh-contributions/internal/contributions/entrypoint"
-	apiRepository "github.com/Aaronidas/gh-contributions/internal/contributions/storage/http"
+	viperConfigurationRepository "github.com/AaronBernabeu/gh-contributions/internal/configuration/viper"
+	"github.com/AaronBernabeu/gh-contributions/internal/contributions/entrypoint"
+	apiRepository "github.com/AaronBernabeu/gh-contributions/internal/contributions/storage/http"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

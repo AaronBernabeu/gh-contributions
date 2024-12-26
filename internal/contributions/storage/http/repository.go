@@ -7,8 +7,8 @@ import (
 	"io"
 	"net/http"
 
-	configuration "github.com/Aaronidas/gh-contributions/internal/configuration"
-	contributions "github.com/Aaronidas/gh-contributions/internal/contributions"
+	configuration "github.com/AaronBernabeu/gh-contributions/internal/configuration"
+	contributions "github.com/AaronBernabeu/gh-contributions/internal/contributions"
 )
 
 const (
@@ -61,7 +61,7 @@ func (repo *apiContributionRepository) GetContribution() (*contributions.Contrib
 	today := data.GetDayContributions()
 	week := data.GetWeekContributions()
 	month := data.GetMonthContributions()
-	year := data.GetTotalContributions()
+	year := data.GetYearContributions()
 
 	return contributions.NewContribution(name, today, week, month, year), error(nil)
 }

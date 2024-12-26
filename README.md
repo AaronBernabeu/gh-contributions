@@ -7,7 +7,7 @@ This project retrieves contribution statistics from GitHub from the last 365 day
 1. Clone the project from the following URL:
 
 ```bash
-git clone https://github.com/Aaronidas/gh-contributions.git
+git clone https://github.com/AaronBernabeu/gh-contributions.git
 ```
 
 2. Navigate to the project directory:

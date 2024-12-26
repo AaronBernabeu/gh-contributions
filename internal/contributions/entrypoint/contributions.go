@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/Aaronidas/gh-contributions/internal/contributions"
+	"github.com/AaronBernabeu/gh-contributions/internal/contributions"
 	"github.com/spf13/cobra"
 )
 

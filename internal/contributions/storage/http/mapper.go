@@ -87,6 +87,22 @@ func (d JSONData) GetTotalContributions() int {
 	return d.Data.User.ContributionsCollection.ContributionCalendar.TotalContributions
 }
 
+func (d JSONData) GetYearContributions() int {
+	now := time.Now()
+	count := 0
+
+	for _, week := range d.Data.User.ContributionsCollection.ContributionCalendar.Weeks {
+		for _, day := range week.ContributionDays {
+			curTime, _ := time.Parse("2006-01-02", day.Date)
+			if curTime.Year() == now.Year() {
+				count = count + day.ContributionCount
+			}
+		}
+	}
+
+	return count
+}
+
 func (w *ContributionWeek) getContributionCount() (count int) {
 	count = 0
 	for _, day := range w.ContributionDays {
