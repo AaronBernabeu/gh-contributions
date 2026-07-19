@@ -3,6 +3,7 @@ package entrypoint
 import (
 	"encoding/json"
 	"fmt"
+	"os"
 
 	"github.com/AaronBernabeu/gh-contributions/internal/contributions"
 	"github.com/spf13/cobra"
@@ -22,8 +23,18 @@ func InitContributionsCmd(repository contributions.ContributionRepository) *cobr
 
 func runContributionsCmd(repository contributions.ContributionRepository) CobraFn {
 	return func(cmd *cobra.Command, args []string) {
-		contribData, _ := repository.GetContribution()
-		jsonData, _ := json.MarshalIndent(contribData, "", "  ")
+		contribData, err := repository.GetContribution()
+		if err != nil {
+			fmt.Fprintln(os.Stderr, "Error:", err)
+			os.Exit(1)
+		}
+
+		jsonData, err := json.MarshalIndent(contribData, "", "  ")
+		if err != nil {
+			fmt.Fprintln(os.Stderr, "Error:", err)
+			os.Exit(1)
+		}
+
 		fmt.Println(string(jsonData))
 	}
 }
